@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import '../css/App.css';
+import "../css/App.css";
 
 export default class Denver extends Component {
   state = {
@@ -9,7 +9,7 @@ export default class Denver extends Component {
 
   async componentDidMount() {
     const url =
-      "https://api.openweathermap.org/data/2.5/weather?q=Denver&appid=9988e46978e6f97c7ef21c5e1ed201da&units=imperial";
+      "https://api.openweathermap.org/data/2.5/weather?q=Longmont&appid=9988e46978e6f97c7ef21c5e1ed201da&units=imperial";
     const response = await fetch(url);
     const data = await response.json();
     this.setState({ city: data, loading: false });
