@@ -6,6 +6,7 @@ import 'bootstrap/dist/js/bootstrap.js';
 import "./css/index.css";
 import App from "./components/App";
 import { BrowserRouter } from "react-router-dom";
+import 'popper.js/dist/umd/popper.js';
 import reportWebVitals from "./reportWebVitals";
 
 ReactDOM.render(
