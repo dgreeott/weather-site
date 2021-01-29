@@ -18,7 +18,7 @@ export default class Denver extends Component {
   render() {
     return (
       <>
-      <div>
+      <div className="container-fluid">
         {this.state.loading || !this.state.city ? (
           <div>Loading...</div>
         ) : (

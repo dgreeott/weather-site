@@ -8,8 +8,16 @@ export default class Home extends Component {
     return (
       <>
         <div className="container-fluid">
-          <Denver />
-          <Longmont />
+          <div className="row">
+            <div classsName="col-sm">
+              <Denver />
+            </div>
+            <div classsName="col-sm">
+              <Longmont />
+            </div>
+          </div>
+          
+          
         </div>
       </>
     );
