@@ -32,7 +32,7 @@ export default class Home extends Component {
                 <div className="col-sm">
                   <div class="card" key={index}>
                     <div class="card-body">
-                      <p class="card-text">{item.city}</p>
+                      <p class="card-text"></p>
                     </div>
                   </div>
                 </div>
