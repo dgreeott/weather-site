@@ -1,14 +1,23 @@
 import React, { Component } from "react";
 import "../css/App.css";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Helmet from "react-helmet";
 
+import Navbar from "../components/Navbar/Navbar";
 import Home from "./Home";
 
 class App extends Component {
-  
   render() {
     return (
       <div className="App">
-        <Home />
+        <Router>
+          <Helmet bodyAttributes={{ style: "background-color : #f8f5f2" }} />
+          <Switch>
+            <Route path={"/"} exact>
+              <Home />
+            </Route>
+          </Switch>
+        </Router>
       </div>
     );
   }
