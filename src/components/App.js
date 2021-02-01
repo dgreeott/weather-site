@@ -11,9 +11,10 @@ class App extends Component {
     return (
       <div className="App">
         <Router>
-          <Helmet bodyAttributes={{ style: "background-color : #f8f5f2" }} />
+          <Helmet bodyAttributes={{ style: "background-color : #296d98" }} />
           <Switch>
             <Route path={"/"} exact>
+              <Navbar />
               <Home />
             </Route>
           </Switch>
