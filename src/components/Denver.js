@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import "../css/App.css";
 
-const API_Key = process.env.REACT_APP_WEATHER_API_KEY;
+const API_KEY=process.env.REACT_APP_WEATHER_API_KEY;
+
 
 export default class Denver extends Component {
   state = {
@@ -10,12 +11,10 @@ export default class Denver extends Component {
   };
 
   async componentDidMount() {
-
-    const url = `https://api.openweathermap.org/data/2.5/weather?q=Denver&units=imperial&appid=${API_Key}`;
+    const url = `https://api.openweathermap.org/data/2.5/weather?q=Denver&units=imperial&appid=${API_KEY}`;
     const response = await fetch(url);
     const data = await response.json();
     this.setState({ city: data, loading: false });
-    console.log(data);
   }
 
   render() {

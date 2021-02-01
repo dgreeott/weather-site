@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import "../css/App.css";
 
-const API_Key = process.env.REACT_APP_WEATHER_API_KEY;
+const API_KEY = process.env.REACT_APP_WEATHER_API_KEY;
 
-export default class Denver extends Component {
+export default class Evergreen extends Component {
   state = {
     loading: true,
     city: null,
@@ -11,7 +11,7 @@ export default class Denver extends Component {
 
   async componentDidMount() {
     const url =
-    `https://api.openweathermap.org/data/2.5/weather?q=Denver&units=imperial&appid=${API_Key}`;
+    `https://api.openweathermap.org/data/2.5/weather?q=Evergreen&units=imperial&appid=${API_KEY}`;
     const response = await fetch(url);
     const data = await response.json();
     this.setState({ city: data, loading: false });

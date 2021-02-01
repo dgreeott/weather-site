@@ -6,12 +6,15 @@ import Evergreen from "./Evergreen";
 
 export const CityItems = [
   {
+    id: "1",
     city: <Denver />,
   },
   {
+    id: "2",
     city: <Longmont />,
   },
   {
+    id: "3",
     city: <Evergreen />,
   },
 ];
@@ -30,9 +33,9 @@ export default class Home extends Component {
             {CityItems.map((item, index) => {
               return (
                 <div className="col-sm">
-                  <div class="card" key={index}>
-                    <div class="card-body">
-                      <p class="card-text"></p>
+                  <div className="card" key={index}>
+                    <div className="card-body" id={CityItems.id}>
+                      {item.city}
                     </div>
                   </div>
                 </div>
