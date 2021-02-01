@@ -10,33 +10,38 @@ export default class Evergreen extends Component {
   };
 
   async componentDidMount() {
-    const url =
-    `https://api.openweathermap.org/data/2.5/weather?q=Evergreen&units=imperial&appid=${API_KEY}`;
+    const url = `https://api.openweathermap.org/data/2.5/weather?q=Evergreen&units=imperial&appid=${API_KEY}`;
     const response = await fetch(url);
     const data = await response.json();
     this.setState({ city: data, loading: false });
   }
 
   render() {
+
     return (
       <>
-      <div>
-        {this.state.loading || !this.state.city ? (
-          <div>Loading...</div>
-        ) : (
-          <div className="containter">
-            <div>
-              <h1>{this.state.city.name}</h1>
+        <div>
+          {this.state.loading || !this.state.city ? (
+            <div>Loading...</div>
+          ) : (
+            <div className="containter">
+              <div>
+                <h1>{this.state.city.name}</h1>
+              </div>
+              <div>
+                <h2>Temp: {Math.round(this.state.city.main.temp)}&#176;</h2>
+              </div>
+              <div>
+                <div>
+                  <h3>
+                    Min: {Math.round(this.state.city.main.temp_min)}&#176; |
+                    Min: {Math.round(this.state.city.main.temp_max)}&#176;
+                  </h3>
+                </div>
+              </div>
             </div>
-            <div>
-              <h2>Temp:{" "}{this.state.city.main.temp}&#176;</h2>
-            </div>
-            <div>
-              <div><h3>Min:{" "}{this.state.city.main.temp_min}&#176; | Min:{" "}{this.state.city.main.temp_max}&#176;</h3></div>
-            </div>
-          </div>
-        )}
-      </div>
+          )}
+        </div>
       </>
     );
   }

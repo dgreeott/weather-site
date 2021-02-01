@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "../css/App.css";
 
-const API_KEY=process.env.REACT_APP_WEATHER_API_KEY;
+const API_KEY = process.env.REACT_APP_WEATHER_API_KEY;
 
 
 export default class Denver extends Component {
@@ -17,6 +17,8 @@ export default class Denver extends Component {
     this.setState({ city: data, loading: false });
   }
 
+  
+
   render() {
     return (
       <>
@@ -29,13 +31,13 @@ export default class Denver extends Component {
                 <h1>{this.state.city.name}</h1>
               </div>
               <div>
-                <h2>Temp: {this.state.city.main.temp}&#176;</h2>
+                <h2>Temp: {Math.round(this.state.city.main.temp)}&#176;</h2>
               </div>
               <div>
                 <div>
                   <h3>
-                    Min: {this.state.city.main.temp_min}&#176; | Min:{" "}
-                    {this.state.city.main.temp_max}&#176;
+                    Min: {Math.round(this.state.city.main.temp_min)}&#176; |
+                    Min: {Math.round(this.state.city.main.temp_max)}&#176;
                   </h3>
                 </div>
               </div>
@@ -46,3 +48,5 @@ export default class Denver extends Component {
     );
   }
 }
+
+
