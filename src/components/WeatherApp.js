@@ -30,6 +30,7 @@ const WeatherApp = () => {
         onChange={(e) => setQuery(e.target.value)}
         onKeyPress={search}
       />
+      <button className="btn btn-light" onClick={(e) => setQuery(e.target.value)}>Submit</button>
       {weather.main && (
         <div className="city">
           <h2 className="city-name">
@@ -50,9 +51,7 @@ const WeatherApp = () => {
         </div>
       )}
       {forcast.main && (
-        <div className="city m-5">
-            {Math.round(forcast.list.main.temp)}
-        </div>
+        <div className="city m-5">{Math.round(forcast.list.main.temp)}</div>
       )}
     </div>
   );
