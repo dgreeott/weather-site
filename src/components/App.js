@@ -4,18 +4,18 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Helmet from "react-helmet";
 
 import Navbar from "../components/Navbar/Navbar";
-import Home from "./Home";
+import WeatherApp from "./WeatherApp";
 
 class App extends Component {
   render() {
     return (
       <div className="App">
         <Router>
-          <Helmet bodyAttributes={{ style: "background-color : #296d98" }} />
+          <Helmet bodyAttributes={{ style: "background-color : #ffffff" }} />
           <Switch>
             <Route path={"/"} exact>
               <Navbar />
-              <Home />
+              <WeatherApp />
             </Route>
           </Switch>
         </Router>
