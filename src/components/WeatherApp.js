@@ -51,7 +51,7 @@ const WeatherApp = () => {
       )}
       {forcast.main && (
         <div className="city m-5">
-            {Math.round(forcast.list.main.temp)}
+            {Math.round(forcast.list[0].main.temp)}
         </div>
       )}
     </div>
