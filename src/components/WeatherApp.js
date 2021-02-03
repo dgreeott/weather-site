@@ -1,17 +1,21 @@
 import React, { useState } from "react";
 
 import { fetchWeather } from "./Api/fetchWeather";
+import { fetchForcast } from "./Api/fetchForcast";
 import "../css/App.css";
 
 const WeatherApp = () => {
   const [query, setQuery] = useState("");
   const [weather, setWeather] = useState({});
+  const [forcast, setForcsat] = useState([]);
 
   const search = async (e) => {
     if (e.key === "Enter") {
-      const data = await fetchWeather(query);
+      const dataWeather = await fetchWeather(query);
+      const dataForcast = await fetchWeather(query);
 
-      setWeather(data);
+      setWeather(dataWeather);
+      setForcsat(dataForcast);
       setQuery("");
     }
   };
@@ -43,6 +47,11 @@ const WeatherApp = () => {
             />
             <p>{weather.weather[0].description}</p>
           </div>
+        </div>
+      )}
+      {forcast.main && (
+        <div className="city m-5">
+            {Math.round(forcast.list.main.temp)}
         </div>
       )}
     </div>
