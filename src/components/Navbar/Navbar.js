@@ -4,22 +4,22 @@ import "./Navbar.css";
 
 export const MenuItems = [
   {
-      title: 'HOME',
+      title: 'Home',
       url: '/',
       cName: 'nav-links'
   },
   {
-      title: 'PROJECTS',
-      url: '/projects',
+      title: 'Search',
+      url: '/search',
       cName: 'nav-links'
   },
   {
-    title: 'ABOUT',
+    title: 'About',
     url: '/about',
     cName: 'nav-links'
   },
   {
-      title: 'CONTACT',
+      title: 'Contact',
       url: '/contact',
       cName: 'nav-links'
   },
@@ -39,9 +39,6 @@ class Navbar extends Component {
   render() {
     return (
         <nav className="navbarItems sticky-top">
-            <a className="icons-navbar" href="mailto:drake.greeott@gmail.com" target="__blank"><i class="fas fa-envelope"></i></a>
-            <a className="icons-navbar" href="https://www.linkedin.com/in/drakegreeott/" target="__blank"><i class="fab fa-linkedin"></i></a>
-            <a className="icons-navbar" href="https://github.com/dgreeott" target="__blank"><i class="fab fa-github"></i></a>
             
           <div className="menu-icon" onClick={this.handleClick}>
             <i
