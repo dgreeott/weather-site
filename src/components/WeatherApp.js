@@ -1,21 +1,19 @@
 import React, { useState } from "react";
 
 import { fetchWeather } from "./Api/fetchWeather";
-import { fetchForcast } from "./Api/fetchForcast";
+import { fetchForecast } from "./Api/fetchForecast";
 import "../css/App.css";
 
 const WeatherApp = () => {
   const [query, setQuery] = useState("");
   const [weather, setWeather] = useState({});
-  const [forcast, setForcsat] = useState([]);
+  const [forcast, setForcsat] = useState({});
 
-  const search = async (e) => {
+  const searchWeather = async (e) => {
     if (e.key === "Enter") {
       const dataWeather = await fetchWeather(query);
-      const dataForcast = await fetchWeather(query);
 
       setWeather(dataWeather);
-      setForcsat(dataForcast);
       setQuery("");
     }
   };
@@ -24,11 +22,11 @@ const WeatherApp = () => {
     <div className="main-container">
       <input
         type="text"
-        className="search m-5"
+        className="search m-4"
         placeholder="Search..."
         value={query}
         onChange={(e) => setQuery(e.target.value)}
-        onKeyPress={search}
+        onKeyPress={searchWeather}
       />
       {weather.main && (
         <div className="city">
@@ -46,12 +44,8 @@ const WeatherApp = () => {
               alt={weather.weather[0].description}
             />
             <p>{weather.weather[0].description}</p>
+            <button className="btn btn-primary">4 Day Forcast</button>
           </div>
-        </div>
-      )}
-      {forcast.main && (
-        <div className="city m-5">
-            {Math.round(forcast.list[0].main.temp)}
         </div>
       )}
     </div>
