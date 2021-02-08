@@ -4,6 +4,31 @@ import { fetchWeather } from "./Api/fetchWeather";
 import { fetchForecast } from "./Api/fetchForecast";
 import "../css/App.css";
 
+export const WeekDays = [
+  {
+      title: 'Monday',
+      url: '/',
+      cName: 'nav-links'
+  },
+  {
+      title: 'S',
+      url: '/search',
+      cName: 'nav-links'
+  },
+  {
+    title: 'About',
+    url: '/about',
+    cName: 'nav-links'
+  },
+  {
+      title: 'Contact',
+      url: '/contact',
+      cName: 'nav-links'
+  },
+  
+]
+
+
 const WeatherApp = () => {
   const [query, setQuery] = useState("");
   const [weather, setWeather] = useState({});
@@ -35,17 +60,17 @@ const WeatherApp = () => {
         onKeyPress={(searchWeather)}
       />
       {weather.main && (
-        <div className="city">
-          <h2 className="city-name">
+        <div className="weather">
+          <h2 className="weather-name">
             <span>{weather.name}</span>
           </h2>
-          <div className="city-temp">
+          <div className="weather-temp">
             {Math.round(weather.main.temp)}
             <sup>&deg;</sup>
           </div>
-          <div className="info">
+          <div className="weather-info">
             <img
-              className="city-icon"
+              className="weather-icon"
               src={`https://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`}
               alt={weather.weather[0].description}
             />
@@ -54,21 +79,21 @@ const WeatherApp = () => {
         </div>
       )}
       {forecast.daily && (
-        <div className="city m-5">
-          <h2 className="city-name">
-            <span>{weather.name}</span>
+        <div className="forecast m-5">
+        
+        <h2 className="forecast-day">
+            <span>Monday</span>
           </h2>
-          <div className="city-temp">
+          <div className="forecast-temp">
           {Math.round(forecast.daily[0].temp.day)}
             <sup>&deg;</sup>
           </div>
-          <div className="info">
+          <div className="forecast-info">
             <img
-              className="city-icon"
+              className="forecast-icon"
               src={`https://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`}
               alt={weather.weather[0].description}
             />
-            <p>{weather.weather[0].description}</p>
           </div>
         </div>
       )}
