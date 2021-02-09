@@ -21,7 +21,7 @@ const WeatherApp = () => {
 
       const dataForecast = await fetchForecast(lat, lon);
       setForecast(dataForecast);
-    } 
+    }
   };
 
   return (
@@ -32,20 +32,19 @@ const WeatherApp = () => {
         placeholder="Search..."
         value={query}
         onChange={(e) => setQuery(e.target.value)}
-        onKeyPress={(searchWeather)}
+        onKeyPress={searchWeather}
       />
       {weather.main && (
-        <div className="city">
-          <h2 className="city-name">
+        <div className="weather">
+          <h2 className="weather-name">
             <span>{weather.name}</span>
           </h2>
-          <div className="city-temp">
-            {Math.round(weather.main.temp)}
-            <sup>&deg;</sup>
+          <div className="weather-temp">
+            {Math.round(weather.main.temp)}&deg;
           </div>
-          <div className="info">
+          <div className="weather-info">
             <img
-              className="city-icon"
+              className="weather-icon"
               src={`https://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`}
               alt={weather.weather[0].description}
             />
@@ -54,21 +53,95 @@ const WeatherApp = () => {
         </div>
       )}
       {forecast.daily && (
-        <div className="city m-5">
-          <h2 className="city-name">
-            <span>{weather.name}</span>
-          </h2>
-          <div className="city-temp">
-          {Math.round(forecast.daily[0].temp.day)}
-            <sup>&deg;</sup>
-          </div>
-          <div className="info">
-            <img
-              className="city-icon"
-              src={`https://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`}
-              alt={weather.weather[0].description}
-            />
-            <p>{weather.weather[0].description}</p>
+        <div className="forecast mt-5">
+          <div className="forecast-temp">
+            <div className="row">
+              <div className="col-sm ml-3">
+                <div className="row justify-content-center">
+                  <h2 className="forecast-day">
+                    <span>Monday</span>
+                  </h2>
+                </div>
+                <div className="row justify-content-center">
+                  {Math.round(forecast.daily[0].temp.day)}&deg;
+                </div>
+                <div classname="row justify-content-center">
+                  <img
+                    className="forecast-icon"
+                    src={`https://openweathermap.org/img/wn/${forecast.daily[0].weather[0].icon}@2x.png`}
+                    alt={forecast.daily[0].weather[0].description}
+                  />
+                </div>
+              </div>
+              <div className="col-sm ml-3">
+              <div className="row justify-content-center">
+                  <h2 className="forecast-day">
+                    <span>Tuesday</span>
+                  </h2>
+                </div>
+                <div className="row justify-content-center">
+                  {Math.round(forecast.daily[0].temp.day)}&deg;
+                </div>
+                <div classname="row justify-content-center">
+                  <img
+                    className="forecast-icon"
+                    src={`https://openweathermap.org/img/wn/${forecast.daily[1].weather[0].icon}@2x.png`}
+                    alt={forecast.daily[0].weather[0].description}
+                  />
+                </div>
+              </div>
+              <div className="col-sm ml-3">
+              <div className="row justify-content-center">
+                  <h2 className="forecast-day">
+                    <span>Wednesday</span>
+                  </h2>
+                </div>
+                <div className="row justify-content-center">
+                  {Math.round(forecast.daily[0].temp.day)}&deg;
+                </div>
+                <div classname="row justify-content-center">
+                  <img
+                    className="forecast-icon"
+                    src={`https://openweathermap.org/img/wn/${forecast.daily[2].weather[0].icon}@2x.png`}
+                    alt={forecast.daily[0].weather[0].description}
+                  />
+                </div>
+              </div>
+              <div className="col-sm ml-3">
+              <div className="row justify-content-center">
+                  <h2 className="forecast-day">
+                    <span>Thursday</span>
+                  </h2>
+                </div>
+                <div className="row justify-content-center">
+                  {Math.round(forecast.daily[0].temp.day)}&deg;
+                </div>
+                <div classname="row justify-content-center">
+                  <img
+                    className="forecast-icon"
+                    src={`https://openweathermap.org/img/wn/${forecast.daily[3].weather[0].icon}@2x.png`}
+                    alt={forecast.daily[0].weather[0].description}
+                  />
+                </div>
+              </div>
+              <div className="col-sm ml-3">
+              <div className="row justify-content-center">
+                  <h2 className="forecast-day">
+                    <span>Friday</span>
+                  </h2>
+                </div>
+                <div className="row justify-content-center">
+                  {Math.round(forecast.daily[0].temp.day)}&deg;
+                </div>
+                <div classname="row justify-content-center">
+                  <img
+                    className="forecast-icon"
+                    src={`https://openweathermap.org/img/wn/${forecast.daily[4].weather[0].icon}@2x.png`}
+                    alt={forecast.daily[0].weather[0].description}
+                  />
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       )}
