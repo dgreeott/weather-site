@@ -14,7 +14,6 @@ class App extends Component {
           <Helmet bodyAttributes={{ style: "background-color : #ffffff" }} />
           <Switch>
             <Route path={"/"} exact>
-              <Navbar />
               <WeatherApp />
             </Route>
           </Switch>
