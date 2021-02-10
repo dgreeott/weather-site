@@ -6,8 +6,11 @@ const TodayForecast = (props) => {
   return (
     <>
       {props.forecast.daily && (
-        <div className="todayForecast mt-5">
+        <div className="todayForecast m-5">
           <div className="todayForecast-temp">
+            <div className="row">
+              <h4>Today's Forecast for</h4>
+            </div>
             <div className="row todayForecast-row justify-content-center">
               <div className="col-xs-3 m-4">
                 <div className="row">
@@ -41,7 +44,7 @@ const TodayForecast = (props) => {
               </div>
             </div>
             <div className="row justify-content-center">
-                <button className="btn btn-primary ">Next Hours</button>
+              <button className="btn btn-primary ">Next Hours</button>
             </div>
           </div>
         </div>

@@ -6,7 +6,7 @@ const DailyForecast = (props) => {
   return (
     <>
       {props.weather.main && (
-        <div className="weather mt-5">
+        <div className="weather m-5">
           <div className="row">
             <h2 className="weather-name">
               <span>{props.weather.name}</span>
@@ -32,13 +32,12 @@ const DailyForecast = (props) => {
               </div>
               <div className="row">
                 <h5>
-                  {props.weather.main.temp_max} / {props.weather.main.temp_min}
+                  {Math.round(props.weather.main.temp_max)} /{" "}
+                  {Math.round(props.weather.main.temp_min)}
                 </h5>
               </div>
             </div>
           </div>
-
-          <div className="weather-info"></div>
         </div>
       )}
     </>
