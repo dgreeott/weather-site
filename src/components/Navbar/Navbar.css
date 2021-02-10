@@ -1,5 +1,6 @@
-.navbarItems {
-    background-color: rgba(250, 250, 250);
+.headerItems {
+    background-color: rgba(0,0,100, 0.5);
+    color: #fff;
     height: 60px;
     display: flex;
     justify-content: center;
@@ -8,7 +9,7 @@
 }
 
 .navbar-logo {
-    color: #232323;
+    color: #fff;
     justify-self: start;
     margin-left: 20px;
     cursor : pointer;
@@ -27,14 +28,14 @@
 }
 
 .nav-links {
-    color: #232323;
+    color: #fff;
     text-decoration: none;
     padding: 0.5rem 1rem;
 }
 
 .nav-links:hover {
-    background-color: #f45d48;
-    color: #fff;
+    background-color: #fff;
+    color: #232323;
     border-radius: 4px;
     transition: all 0.2s ease-out;
 }

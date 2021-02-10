@@ -7,7 +7,7 @@ const DailyForecast = props => {
   return (
     <>
       {props.forecast.daily && (
-        <div className="dailyForecast mt-5">
+        <div className="dailyForecast m-5">
           <div className="dailyForecast-temp">
             <div className="row">
               <div className="col-sm ml-3">
