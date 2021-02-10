@@ -4,24 +4,19 @@ import "./Navbar.css";
 
 export const MenuItems = [
   {
-      title: 'Home',
+      title: 'Today',
       url: '/',
       cName: 'nav-links'
   },
   {
-      title: 'Search',
-      url: '/search',
+      title: 'Hourly',
+      url: '/hourly',
       cName: 'nav-links'
   },
   {
-    title: 'About',
-    url: '/about',
+    title: '8 Day',
+    url: '/8day',
     cName: 'nav-links'
-  },
-  {
-      title: 'Contact',
-      url: '/contact',
-      cName: 'nav-links'
   },
   
 ]
@@ -34,11 +29,9 @@ class Navbar extends Component {
     this.setState({ clicked: !this.state.clicked });
   };
 
-  
-
   render() {
     return (
-        <nav className="navbarItems sticky-top">
+        <nav className="navbarItems">
             
           <div className="menu-icon" onClick={this.handleClick}>
             <i
