@@ -1,5 +1,5 @@
-.headerItems {
-    background-color: rgba(0,0,100, 0.5);
+.navbarItems {
+    background-color: rgba(3,31,64, .75);
     color: #fff;
     height: 60px;
     display: flex;
@@ -18,11 +18,11 @@
 .nav-menu {
     display: grid;
     grid-template-columns: repeat(5, auto);
-    grid-gap: 5px;
+    grid-gap: 15px;
     list-style: none;
     text-align: center;
     width: 75vw;
-    justify-content: end;
+    justify-content: center;
     margin-right: 2rem;
     margin-top: 1rem;
 }

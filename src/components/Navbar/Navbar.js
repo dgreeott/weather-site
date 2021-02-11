@@ -1,26 +1,24 @@
 import React, { Component } from "react";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 import "./Navbar.css";
 
 export const MenuItems = [
   {
-      title: 'Today',
-      url: '/',
-      cName: 'nav-links'
+    title: "Today",
+    url: "/",
+    cName: "nav-links m-5",
   },
   {
-      title: 'Hourly',
-      url: '/hourly',
-      cName: 'nav-links'
+    title: "Hourly",
+    url: "/hourly",
+    cName: "nav-links m-5",
   },
   {
-    title: '5 Day',
-    url: '/5day',
-    cName: 'nav-links'
+    title: "5 Day",
+    url: "/5day",
+    cName: "nav-links m-5",
   },
-  
-]
-
+];
 
 class Navbar extends Component {
   state = { clicked: false };
@@ -31,26 +29,24 @@ class Navbar extends Component {
 
   render() {
     return (
-        <nav className="navbarItems">
-            
-          <div className="menu-icon" onClick={this.handleClick}>
-            <i
-              className={this.state.clicked ? "fas fa-times" : "fas fa-bars"}
-            ></i>
-          </div>
-          <ul className={this.state.clicked ? "nav-menu active" : "nav-menu"}>
-            {MenuItems.map((item, index) => {
-              return (
-                <li key={index}>
-                  <Link className={item.cName} to={item.url}>
-                    {item.title}
-                  </Link>
-                </li>
-              );
-            })}
-          </ul>
-          
-        </nav>
+      <nav className="navbarItems">
+        <div className="menu-icon" onClick={this.handleClick}>
+          <i
+            className={this.state.clicked ? "fas fa-times" : "fas fa-bars"}
+          ></i>
+        </div>
+        <ul className={this.state.clicked ? "nav-menu active" : "nav-menu"}>
+          {MenuItems.map((item, index) => {
+            return (
+              <li key={index}>
+                <Link className={item.cName} to={item.url}>
+                  {item.title}
+                </Link>
+              </li>
+            );
+          })}
+        </ul>
+      </nav>
     );
   }
 }

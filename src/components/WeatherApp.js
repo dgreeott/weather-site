@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 
+import Navbar from "./Navbar/Navbar";
 import { fetchWeather } from "./Api/fetchWeather";
 import { fetchForecast } from "./Api/fetchForecast";
 import DailyForecast from "./DailyForecast";
 import CurrentWeather from "./CurrentWeather";
 import TodayForecast from "./TodayForecast";
+import HourlyForecast from "./HourlyForecast";
 import "../css/App.css";
 
 const WeatherApp = () => {
@@ -29,33 +31,32 @@ const WeatherApp = () => {
 
   return (
     <>
-      <div className="main-container">
-        <div className="container">
-          <div className="row">
-          <div className="col-lg">
+      <Navbar />
+      <div className="container m-5">
+        <div className="row m-5">
+          <div className="col-sm text-center">
             <input
               type="text"
-              className="search m-5 "
+              className="search"
               value={query}
               onChange={(e) => setQuery(e.target.value)}
               onKeyPress={searchWeather}
               placeholder="Search City"
             />
-            </div>
           </div>
         </div>
-
-        <div classname="">
-          <div className="headerItems">
-            <a className="head-links m-5">Today</a>
-            <a className="head-links m-5">Hourly</a>
-            <a className="head-links m-5">5 Day</a>
-          </div>
+        <div className="row">
+          <CurrentWeather weather={weather} />
         </div>
-
-        <CurrentWeather weather={weather} />
-        <TodayForecast forecast={forecast} />
-        <DailyForecast forecast={forecast} />
+        <div className="row">
+          <TodayForecast todayForecast={forecast} />
+        </div>
+        <div className="row">
+          <HourlyForecast hourlyForecast={forecast} />
+        </div>
+        <div className="row">
+          <DailyForecast dailyForecast={forecast} />
+        </div>
       </div>
     </>
   );
