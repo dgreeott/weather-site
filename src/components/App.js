@@ -10,9 +10,15 @@ class App extends Component {
     return (
       <div className="App">
         <Router>
-          <Helmet bodyAttributes={{ style: "background-image: linear-gradient(#296d98, #d2b48c);" }} />
+        <Helmet bodyAttributes={{ style: "background-image: linear-gradient(#296d98, #d2b48c);" }} />
           <Switch>
             <Route path={"/"} exact>
+              <WeatherApp />
+            </Route>
+            <Route path={"/hourly"} exact>
+              <WeatherApp />
+            </Route>
+            <Route path={"/5day"} exact>
               <WeatherApp />
             </Route>
           </Switch>

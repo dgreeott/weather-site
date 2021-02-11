@@ -1,37 +1,13 @@
-/* ---------- Nav ---------- */
-.headerItems {
-  background-color: rgba(0,0,100, 0.5);
-  color: #fff;
-  width: 100%;
-  height: 60px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 1.2rem;
-}
-
-.head-links {
-  color: #fff;
-  text-decoration: none;
-  padding: 0.5rem 1rem;
-}
-
-.head-links:hover {
-  background-color: #fff;
-  color: #232323;
-  border-radius: 4px;
-  transition: all 0.2s ease-out;
-}
-
 /* ---------- WeatherApp Styles ---------- */
 html,
 body,
 #root {
   font: 0.9rem sans-serif;
   background-repeat: no-repeat;
-  color: #1e2432;
+  color: #232323;
   width: 100%;
   margin: 0;
+  background-attachment: fixed;
 }
 
 .main-container {
@@ -40,6 +16,7 @@ body,
 }
 
 .main-container {
+  
   height: 100%;
   justify-content: center;
   align-items: center;
@@ -50,14 +27,11 @@ body,
   padding: 20px 7%;
   border-radius: 20px;
   border: none;
-  margin-bottom: 5%;
   background: rgba(250, 250, 250, 0.35);
 }
 
 /* ---------- Weather Styles ---------- */
 .weather {
-  align-items: center;
-  justify-content: center;
   padding: 40px 8%;
   border-radius: 20px;
   color: #fff;
@@ -66,22 +40,20 @@ body,
 }
 
 h5 {
-  margin-top: 10px;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  font-weight: bold;
 }
 
 .weather-temp {
   font-size: 5rem;
   font-weight: bold;
-  margin-top: 10px;
+  padding: 10px;
+  margin-left: 20px;
   color: #fff;
-  text-align: center;
 }
 
 .weather-name {
-  font-size: 2em;
+  font-size: 3em;
 }
 
 .weather-icon {
@@ -90,25 +62,18 @@ h5 {
   height: 100px;
 }
 
-.weather-info {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
+
 
 /* Today Forecast Styles */
 .todayForecast {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
   padding: 40px 8%;
   border-radius: 20px;
-  background: rgba(250, 250, 250);
+  color: #232323;
+  background: rgba(250, 250, 250, .75);
   box-shadow: 10px 10px 5px 0px rgba(15, 15, 15, 0.404);
 }
 
-p {
+h3 {
   margin-top: 10px;
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -117,9 +82,12 @@ p {
 .todayForecast-temp {
   font-size: 2.5rem;
   font-weight: bold;
-  margin-top: 10px;
-  color: #1e2432;
-  text-align: center;
+  color: #232323;
+}
+
+.todayForecast-name {
+  font-size: 3em;
+  font-weight: bold;
 }
 
 .todayForecast-day {
@@ -132,38 +100,61 @@ p {
   height: 65px;
 }
 
-/* Daily Forecast Styles */
-.dailyForecast {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
+/*  Hourly Forecast Styles */
+.hourlyForecast {
   padding: 40px 8%;
   border-radius: 20px;
-  background: rgba(250, 250, 250);
+  color: #232323;
+  background: rgba(250, 250, 250, .75);
   box-shadow: 10px 10px 5px 0px rgba(15, 15, 15, 0.404);
 }
 
-p {
-  margin-top: 10px;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
+.hourlyForecast-temp {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #232323;
+}
+
+.hourlyForecast-day {
+  font-size: 1.5em;
+}
+
+.dailyForecast-name {
+  font-size: 3em;
+  font-weight: bold;
+}
+
+.hourlyForecast-icon {
+  width: 65px;
+  height: 65px;
+}
+
+/* 5 Day Forecast Styles */
+.dailyForecast {
+  padding: 40px 8%;
+  border-radius: 20px;
+  color: #232323;
+  background: rgba(250, 250, 250, .75);
+  box-shadow: 10px 10px 5px 0px rgba(15, 15, 15, 0.404);
 }
 
 .dailyForecast-temp {
   font-size: 2.5rem;
   font-weight: bold;
-  margin-top: 10px;
-  color: #1e2432;
+  color: #232323;
   text-align: center;
 }
 
 .dailyForecast-day {
-  font-size: 0.7em;
+  font-size: 1.5em;
+}
+
+.dailyForecast-name {
+  font-size: 3em;
+  font-weight: bold;
 }
 
 .dailyForecast-icon {
-  margin-top: 10px;
   width: 65px;
   height: 65px;
 }
