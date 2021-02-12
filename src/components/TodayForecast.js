@@ -14,8 +14,8 @@ const TodayForecast = (props) => {
                   <h3>Today's Forecast</h3>
                 </div>
               </div>
-              <div className="row todayForecast-temp">
-                <div className="col-sm">
+              <div className="row todayForecast-temp justify-content-center">
+                <div className="col-sm-4">
                   <div className="row justify-content-center">
                     <h2 className="todayForecast-day">
                       <span>Morning</span>
@@ -25,7 +25,7 @@ const TodayForecast = (props) => {
                     {Math.round(props.todayForecast.daily[0].temp.morn)}&deg;
                   </div>
                 </div>
-                <div className="col-sm">
+                <div className="col-sm-4">
                   <div className="row justify-content-center">
                     <h2 className="todayForecast-day">
                       <span>Evening</span>
@@ -35,7 +35,7 @@ const TodayForecast = (props) => {
                     {Math.round(props.todayForecast.daily[1].temp.eve)}&deg;
                   </div>
                 </div>
-                <div className="col-sm">
+                <div className="col-sm-4">
                   <div className="row justify-content-center">
                     <h2 className="todayForecast-day">
                       <span>Night</span>

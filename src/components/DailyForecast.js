@@ -14,8 +14,8 @@ const DailyForecast = (props) => {
                   <h3>Daily Forecast</h3>
                 </div>
               </div>
-              <div className="row">
-                <div className="col-sm">
+              <div className="row justify-content-center">
+                <div className="col-sm-2">
                   <div className="row">
                     <h2 className="dailyForecast-day">
                       <span>Monday</span>
@@ -32,7 +32,7 @@ const DailyForecast = (props) => {
                     />
                   </div>
                 </div>
-                <div className="col-sm">
+                <div className="col-sm-2">
                   <div className="row">
                     <h2 className="dailyForecast-day">
                       <span>Tuesday</span>
@@ -49,7 +49,7 @@ const DailyForecast = (props) => {
                     />
                   </div>
                 </div>
-                <div className="col-sm">
+                <div className="col-sm-2">
                   <div className="row">
                     <h2 className="dailyForecast-day">
                       <span>Wednesday</span>
@@ -66,7 +66,7 @@ const DailyForecast = (props) => {
                     />
                   </div>
                 </div>
-                <div className="col-sm">
+                <div className="col-sm-2">
                   <div className="row">
                     <h2 className="dailyForecast-day">
                       <span>Thursday</span>
@@ -83,7 +83,7 @@ const DailyForecast = (props) => {
                     />
                   </div>
                 </div>
-                <div className="col-sm">
+                <div className="col-sm-2">
                   <div className="row dailyForecast-section">
                     <h2 className="dailyForecast-day">
                       <span>Friday</span>
