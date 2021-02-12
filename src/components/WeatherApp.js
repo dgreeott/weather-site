@@ -1,12 +1,16 @@
 import React, { useState } from "react";
 
 import Navbar from "./Navbar/Navbar";
+
 import { fetchWeather } from "./Api/fetchWeather";
 import { fetchForecast } from "./Api/fetchForecast";
+
 import DailyForecast from "./DailyForecast";
 import CurrentWeather from "./CurrentWeather";
 import TodayForecast from "./TodayForecast";
 import HourlyForecast from "./HourlyForecast";
+import WeatherToday from "./WeatherToday";
+
 import "../css/App.css";
 
 const WeatherApp = () => {
@@ -32,9 +36,9 @@ const WeatherApp = () => {
   return (
     <>
       <Navbar />
-      <div className="container m-5">
+      <div className="container-fluid m-5">
         <div className="row m-5">
-          <div className="col-sm text-center">
+          <div className="col-sm text-center m-2">
             <input
               type="text"
               className="search"
@@ -45,11 +49,16 @@ const WeatherApp = () => {
             />
           </div>
         </div>
+      </div>
+      <div className="container">
         <div className="row">
           <CurrentWeather weather={weather} />
         </div>
         <div className="row">
           <TodayForecast todayForecast={forecast} />
+        </div>
+        <div className="row">
+          <WeatherToday weatherToday={weather} />
         </div>
         <div className="row">
           <HourlyForecast hourlyForecast={forecast} />

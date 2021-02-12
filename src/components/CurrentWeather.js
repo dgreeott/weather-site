@@ -2,7 +2,7 @@ import React from "react";
 
 import "../css/App.css";
 
-const DailyForecast = (props) => {
+const CurrentWeather = (props) => {
   return (
     <>
       {props.weather.main && (
@@ -15,24 +15,24 @@ const DailyForecast = (props) => {
                 </h2>
               </div>
               <div className="row">
-                <div className="col-sm text-start">
+                <div className="col-sm justify-content-center">
                   <div className="row weather-temp">
                     {Math.round(props.weather.main.temp)}&deg;
                   </div>
-                  <div className="row mt-3">
+                  <div className="row mt-3 ml-2">
                     <h5>{props.weather.weather[0].description}</h5>
                   </div>
                   
                 </div>
-                <div className="col-sm">
+                <div className="col-sm justify-content-center">
                   <div className="row justify-content-end">
                     <img
-                      className="weather-icon"
+                      className="weather-icon justify-content-center"
                       src={`https://openweathermap.org/img/wn/${props.weather.weather[0].icon}@2x.png`}
                       alt={props.weather.weather[0].description}
                     />
                   </div>
-                  <div className="row justify-content-end">
+                  <div className="row justify-content-end mr-2">
                     <h4>
                       {Math.round(props.weather.main.temp_max)}&deg; /{" "}
                       {Math.round(props.weather.main.temp_min)}&deg;
@@ -49,4 +49,4 @@ const DailyForecast = (props) => {
   );
 };
 
-export default DailyForecast;
+export default CurrentWeather;
