@@ -11,7 +11,10 @@ const WeatherToday = (props) => {
             <div className="col-sm-9 weatherToday">
               <div className="row">
                 <h3 className="col-sm weatherToday-name mb-3">
-                  <span>Weather Today in {props.weatherToday.name}</span>
+                  <span>
+                    Weather Today in {props.weatherToday.name},{" "}
+                    {props.weatherToday.sys.country}
+                  </span>
                 </h3>
               </div>
 
@@ -41,7 +44,7 @@ const WeatherToday = (props) => {
                   </div>
                   <hr></hr>
                   <div className="row">
-                  <div className="col-sm justify-content-start">
+                    <div className="col-sm justify-content-start">
                       <h4>Humidity</h4>
                     </div>
                     <div className="col-sm justify-content-end">
@@ -50,20 +53,30 @@ const WeatherToday = (props) => {
                       </h4>
                     </div>
                   </div>
-                  <hr></hr>
-                  <div className="row"></div>
-                  <hr></hr>
-                  <div className="row"></div>
                 </div>
                 <div className="col-sm">
                   <hr></hr>
-                  <div className="row"></div>
+                  <div className="row">
+                    <div className="col-sm justify-content-start">
+                      <h4>Wind</h4>
+                    </div>
+                    <div className="col-sm justify-content-end">
+                      <h4 className="justify-content-end">
+                        {Math.round(props.weatherToday.wind.speed)}mph
+                      </h4>
+                    </div>
+                  </div>
                   <hr></hr>
-                  <div className="row"></div>
-                  <hr></hr>
-                  <div className="row"></div>
-                  <hr></hr>
-                  <div className="row"></div>
+                  <div className="row">
+                    <div className="col-sm justify-content-start">
+                      <h4>Pressure</h4>
+                    </div>
+                    <div className="col-sm justify-content-end">
+                      <h4 className="justify-content-end">
+                        {Math.round(props.weatherToday.main.pressure)}in
+                      </h4>
+                    </div>
+                  </div>
                 </div>
               </div>
 
