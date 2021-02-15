@@ -14,8 +14,8 @@ export const MenuItems = [
     cName: "nav-links m-5",
   },
   {
-    title: "5 Day",
-    url: "/5day",
+    title: "7-Day",
+    url: "/7day",
     cName: "nav-links m-5",
   },
 ];

@@ -58,7 +58,7 @@ const WeatherApp = () => {
           <TodayForecast todayForecast={forecast} />
         </div>
         <div className="row">
-          <WeatherToday weatherToday={weather} weatherToday2={forecast} />
+          <WeatherToday weatherToday={weather} />
         </div>
         <div className="row">
           <HourlyForecast hourlyForecast={forecast} />
