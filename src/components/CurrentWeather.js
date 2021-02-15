@@ -1,4 +1,6 @@
 import React from "react";
+import moment from "moment";
+import momentTimezone from "moment-timezone";
 
 import "../css/App.css";
 
@@ -14,6 +16,9 @@ const CurrentWeather = (props) => {
                   <span>{props.weather.name}</span>
                 </h2>
               </div>
+              <div className="row pl-3">
+                <h5>As of {moment.unix(props.weather.dt).format("LT")}</h5>
+              </div>
               <div className="row">
                 <div className="col-sm justify-content-center">
                   <div className="row weather-temp">
@@ -22,7 +27,6 @@ const CurrentWeather = (props) => {
                   <div className="row mt-3 ml-2">
                     <h5>{props.weather.weather[0].description}</h5>
                   </div>
-                  
                 </div>
                 <div className="col-sm justify-content-center">
                   <div className="row justify-content-end">
