@@ -1,21 +1,21 @@
 import React from "react";
 import moment from "moment";
 
-import "../css/App.css";
+
 
 const CurrentWeather = (props) => {
   return (
     <>
       {props.weather.main && (
         <div className="container mt-3">
-          <div className="row">
-            <div className="col-sm-9 weather">
+          <div className="row weather">
+            <div className="col-sm">
               <div className="row">
-                <h2 className="col-sm weather-name">
+                <h2 className="col-sm weather-name ml-3">
                   <span>{props.weather.name}</span>
                 </h2>
               </div>
-              <div className="row pl-3">
+              <div className="row ml-3">
                 <h5>As of {moment.unix(props.weather.dt).format("LT")}</h5>
               </div>
               <div className="row">
@@ -23,7 +23,7 @@ const CurrentWeather = (props) => {
                   <div className="row weather-temp">
                     {Math.round(props.weather.main.temp)}&deg;
                   </div>
-                  <div className="row mt-3 ml-2">
+                  <div className="row mt-3 ml-3">
                     <h5>{props.weather.weather[0].description}</h5>
                   </div>
                 </div>

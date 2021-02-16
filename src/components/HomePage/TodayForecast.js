@@ -1,20 +1,20 @@
 import React from "react";
 
-import "../css/App.css";
+
 
 const TodayForecast = (props) => {
   return (
     <>
       {props.todayForecast.daily && (
         <div className="container mt-3">
-          <div className="row">
-            <div className="col-sm-9 todayForecast">
+          <div className="row todayForecast">
+            <div className="col-sm">
               <div className="row">
                 <div className="col-sm todayForecast-name mb-3">
                   <h3>Today's Forecast</h3>
                 </div>
               </div>
-              <div className="row todayForecast-temp justify-content-center">
+              <div className="row todayForecast-temp">
                 <div className="col-sm-4">
                   <div className="row justify-content-center">
                     <h2 className="todayForecast-day">
@@ -46,12 +46,11 @@ const TodayForecast = (props) => {
                   </div>
                 </div>
               </div>
-              <div className="row mt-3">
+              <div className="row mt-4">
                 <button className="btn btn-primary">Next Hours</button>
               </div>
             </div>
           </div>
-          <div className="col-sm-3"></div>
         </div>
       )}
     </>
