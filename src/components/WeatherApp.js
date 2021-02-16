@@ -5,11 +5,13 @@ import Navbar from "./Navbar/Navbar";
 import { fetchWeather } from "./Api/fetchWeather";
 import { fetchForecast } from "./Api/fetchForecast";
 
-import DailyForecast from "./DailyForecast";
-import CurrentWeather from "./CurrentWeather";
-import TodayForecast from "./TodayForecast";
-import HourlyForecast from "./HourlyForecast";
-import WeatherToday from "./WeatherToday";
+import DailyForecast from "./HomePage/DailyForecast";
+import CurrentWeather from "./HomePage/CurrentWeather";
+import TodayForecast from "./HomePage/TodayForecast";
+import HourlyForecast from "./HomePage/HourlyForecast";
+import WeatherToday from "./HomePage/WeatherToday";
+
+import CovidInfo from "./HomePage/CovidInfo";
 
 import "../css/App.css";
 
@@ -37,8 +39,8 @@ const WeatherApp = () => {
     <>
       <Navbar />
       <div className="container-fluid m-5">
-        <div className="row m-5">
-          <div className="col-sm text-center m-2">
+        <div className="row">
+          <div className="col-sm text-center">
             <input
               type="text"
               className="search"
@@ -50,21 +52,18 @@ const WeatherApp = () => {
           </div>
         </div>
       </div>
-      <div className="container">
+      <div className="container-fluid mt-5">
         <div className="row">
+        <div className="col-sm-8">
           <CurrentWeather weather={weather} />
-        </div>
-        <div className="row">
           <TodayForecast todayForecast={forecast} />
-        </div>
-        <div className="row">
           <WeatherToday weatherToday={weather} />
-        </div>
-        <div className="row">
           <HourlyForecast hourlyForecast={forecast} />
-        </div>
-        <div className="row">
           <DailyForecast dailyForecast={forecast} />
+          </div>
+          <div className="col-sm-3">
+          <CovidInfo covidInfo={forecast} />
+          </div>
         </div>
       </div>
     </>

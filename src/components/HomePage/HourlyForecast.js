@@ -1,23 +1,22 @@
 import React from "react";
 import moment from "moment";
 
-import "../css/App.css";
 
 const HourlyForecast = (props) => {
   return (
     <>
       {props.hourlyForecast.hourly && (
         <div className="container mt-3">
-          <div className="row">
-            <div className="col-sm-9 hourlyForecast justify-content-start">
+          <div className="row hourlyForecast">
+            <div className="col-sm">
               <div className="row">
                 <div className="col-sm hourlyForecast-name mb-3">
                   <h3>Hourly Forecast</h3>
                 </div>
               </div>
-              <div className="row justify-content-center">
+              <div className="row">
                 <div className="col-sm-2">
-                  <div className="row">
+                  <div className="row justify-content-center">
                     <h2 className="hourlyForecast-day">
                       <span>
                         {moment
@@ -26,10 +25,10 @@ const HourlyForecast = (props) => {
                       </span>
                     </h2>
                   </div>
-                  <div className="row hourlyForecast-temp">
+                  <div className="row hourlyForecast-temp justify-content-center">
                     {Math.round(props.hourlyForecast.hourly[0].temp)}&deg;
                   </div>
-                  <div className="row">
+                  <div className="row justify-content-center">
                     <img
                       className="hourlyForecast-icon"
                       src={`https://openweathermap.org/img/wn/${props.hourlyForecast.hourly[0].weather[0].icon}@2x.png`}
@@ -40,7 +39,7 @@ const HourlyForecast = (props) => {
                   </div>
                 </div>
                 <div className="col-sm-2">
-                  <div className="row">
+                  <div className="row justify-content-center">
                     <h2 className="hourlyForecast-day">
                       <span>
                         {moment
@@ -49,10 +48,10 @@ const HourlyForecast = (props) => {
                       </span>
                     </h2>
                   </div>
-                  <div className="row hourlyForecast-temp">
+                  <div className="row hourlyForecast-temp justify-content-center">
                     {Math.round(props.hourlyForecast.hourly[1].temp)}&deg;
                   </div>
-                  <div className="row">
+                  <div className="row justify-content-center">
                     <img
                       className="hourlyForecast-icon"
                       src={`https://openweathermap.org/img/wn/${props.hourlyForecast.hourly[1].weather[0].icon}@2x.png`}
@@ -63,7 +62,7 @@ const HourlyForecast = (props) => {
                   </div>
                 </div>
                 <div className="col-sm-2">
-                  <div className="row">
+                  <div className="row justify-content-center">
                     <h2 className="hourlyForecast-day">
                       <span>
                         {moment
@@ -72,10 +71,10 @@ const HourlyForecast = (props) => {
                       </span>
                     </h2>
                   </div>
-                  <div className="row hourlyForecast-temp">
+                  <div className="row hourlyForecast-temp justify-content-center">
                     {Math.round(props.hourlyForecast.hourly[2].temp)}&deg;
                   </div>
-                  <div className="row">
+                  <div className="row justify-content-center">
                     <img
                       className="hourlyForecast-icon"
                       src={`https://openweathermap.org/img/wn/${props.hourlyForecast.hourly[2].weather[0].icon}@2x.png`}
@@ -86,7 +85,7 @@ const HourlyForecast = (props) => {
                   </div>
                 </div>
                 <div className="col-sm-2">
-                  <div className="row">
+                  <div className="row justify-content-center">
                     <h2 className="hourlyForecast-day">
                       <span>
                         {moment
@@ -95,10 +94,10 @@ const HourlyForecast = (props) => {
                       </span>
                     </h2>
                   </div>
-                  <div className="row hourlyForecast-temp">
+                  <div className="row hourlyForecast-temp justify-content-center">
                     {Math.round(props.hourlyForecast.hourly[3].temp)}&deg;
                   </div>
-                  <div className="row">
+                  <div className="row justify-content-center">
                     <img
                       className="hourlyForecast-icon"
                       src={`https://openweathermap.org/img/wn/${props.hourlyForecast.hourly[3].weather[0].icon}@2x.png`}
@@ -109,7 +108,7 @@ const HourlyForecast = (props) => {
                   </div>
                 </div>
                 <div className="col-sm-2">
-                  <div className="row">
+                  <div className="row justify-content-center">
                     <h2 className="hourlyForecast-day">
                       <span>
                         {moment
@@ -118,10 +117,10 @@ const HourlyForecast = (props) => {
                       </span>
                     </h2>
                   </div>
-                  <div className="row hourlyForecast-temp">
+                  <div className="row hourlyForecast-temp justify-content-center">
                     {Math.round(props.hourlyForecast.hourly[4].temp)}&deg;
                   </div>
-                  <div className="row">
+                  <div className="row justify-content-center">
                     <img
                       className="hourlyForecast-icon"
                       src={`https://openweathermap.org/img/wn/${props.hourlyForecast.hourly[4].weather[0].icon}@2x.png`}
@@ -133,11 +132,10 @@ const HourlyForecast = (props) => {
                 </div>
               </div>
 
-              <div className="row mt-3">
+              <div className="row mt-4">
                 <button className="btn btn-primary">Next 48 Hours</button>
               </div>
             </div>
-            <div className="col-sm-3"></div>
           </div>
         </div>
       )}
