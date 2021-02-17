@@ -16,7 +16,7 @@ const CurrentWeather = (props) => {
                 </h2>
               </div>
               <div className="row ml-3">
-                <h5>As of {moment.unix(props.weather.dt).format("LT")}</h5>
+                <h6>As of {moment.unix(props.weather.dt).format("LT")}</h6>
               </div>
               <div className="row">
                 <div className="col-sm justify-content-center">
