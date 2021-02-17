@@ -6,7 +6,6 @@ import * as FaIcons from "react-icons/fa";
 import { WiHumidity } from "react-icons/wi";
 import { BsArrowsCollapse } from "react-icons/bs";
 
-
 const WeatherToday = (props) => {
   return (
     <>
@@ -34,7 +33,7 @@ const WeatherToday = (props) => {
                 </div>
                 <div className="col-sm-4 justify-content-end mt-5">
                   <div className="row">
-                    <div className="col-sm-6 text-center">
+                    <div className="col-sm-6">
                       <h6>
                         <FiIcons.FiSunrise size={20} />{" "}
                         {moment
@@ -58,7 +57,9 @@ const WeatherToday = (props) => {
                   <hr></hr>
                   <div className="row">
                     <div className="col-sm-8">
-                      <h4><FaIcons.FaTemperatureHigh size={20} /> High/Low</h4>
+                      <h4>
+                        <FaIcons.FaTemperatureHigh size={20} /> High/Low
+                      </h4>
                     </div>
                     <div className="col-sm-4">
                       <h4>
@@ -70,7 +71,9 @@ const WeatherToday = (props) => {
                   <hr></hr>
                   <div className="row">
                     <div className="col-sm-8">
-                      <h4><WiHumidity size={20} /> Humidity</h4>
+                      <h4>
+                        <WiHumidity size={20} /> Humidity
+                      </h4>
                     </div>
                     <div className="col-sm-4">
                       <h4>{Math.round(props.weatherToday.main.humidity)}%</h4>
@@ -81,7 +84,9 @@ const WeatherToday = (props) => {
                   <hr></hr>
                   <div className="row">
                     <div className="col-sm-8">
-                      <h4><FaIcons.FaWind size={20} /> Wind</h4>
+                      <h4>
+                        <FaIcons.FaWind size={20} /> Wind
+                      </h4>
                     </div>
                     <div className="col-sm-4">
                       <h4>{Math.round(props.weatherToday.wind.speed)} mph</h4>
@@ -90,7 +95,9 @@ const WeatherToday = (props) => {
                   <hr></hr>
                   <div className="row">
                     <div className="col-sm-8">
-                      <h4><BsArrowsCollapse size={20} /> Pressure</h4>
+                      <h4>
+                        <BsArrowsCollapse size={20} /> Pressure
+                      </h4>
                     </div>
                     <div className="col-sm-4">
                       <h4>

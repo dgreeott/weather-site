@@ -13,7 +13,7 @@ const DailyForecast = (props) => {
                   <h3>Daily Forecast</h3>
                 </div>
               </div>
-              <div className="row">
+              <div className="row justify-content-center">
                 <div className="col-sm-2">
                   <div className="row justify-content-center">
                     <h2 className="dailyForecast-day">

@@ -28,7 +28,7 @@ const TodayForecast = (props) => {
                 <div className="col-sm-4">
                   <div className="row justify-content-center">
                     <h2 className="todayForecast-day">
-                      <span>Evening</span>
+                      <span>Afternoon</span>
                     </h2>
                   </div>
                   <div className="row justify-content-center">
