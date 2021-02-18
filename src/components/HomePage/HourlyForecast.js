@@ -1,6 +1,5 @@
 import React from "react";
-import moment from "moment";
-
+import moment from "moment-timezone";
 
 const HourlyForecast = (props) => {
   return (
@@ -21,6 +20,7 @@ const HourlyForecast = (props) => {
                       <span>
                         {moment
                           .unix(props.hourlyForecast.hourly[0].dt)
+                          .tz(props.hourlyForecast.timezone)
                           .format("LT")}
                       </span>
                     </h2>
@@ -41,9 +41,10 @@ const HourlyForecast = (props) => {
                 <div className="col-sm-2">
                   <div className="row justify-content-center">
                     <h2 className="hourlyForecast-day">
-                      <span>
+                    <span>
                         {moment
                           .unix(props.hourlyForecast.hourly[1].dt)
+                          .tz(props.hourlyForecast.timezone)
                           .format("LT")}
                       </span>
                     </h2>
@@ -64,9 +65,10 @@ const HourlyForecast = (props) => {
                 <div className="col-sm-2">
                   <div className="row justify-content-center">
                     <h2 className="hourlyForecast-day">
-                      <span>
+                    <span>
                         {moment
                           .unix(props.hourlyForecast.hourly[2].dt)
+                          .tz(props.hourlyForecast.timezone)
                           .format("LT")}
                       </span>
                     </h2>
@@ -87,9 +89,10 @@ const HourlyForecast = (props) => {
                 <div className="col-sm-2">
                   <div className="row justify-content-center">
                     <h2 className="hourlyForecast-day">
-                      <span>
+                    <span>
                         {moment
                           .unix(props.hourlyForecast.hourly[3].dt)
+                          .tz(props.hourlyForecast.timezone)
                           .format("LT")}
                       </span>
                     </h2>
@@ -110,9 +113,10 @@ const HourlyForecast = (props) => {
                 <div className="col-sm-2">
                   <div className="row justify-content-center">
                     <h2 className="hourlyForecast-day">
-                      <span>
+                    <span>
                         {moment
                           .unix(props.hourlyForecast.hourly[4].dt)
+                          .tz(props.hourlyForecast.timezone)
                           .format("LT")}
                       </span>
                     </h2>

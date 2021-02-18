@@ -12,7 +12,7 @@ import TodayForecast from "./HomePage/TodayForecast";
 import HourlyForecast from "./HomePage/HourlyForecast";
 import WeatherToday from "./HomePage/WeatherToday";
 
-import CovidInfo from "./HomePage/CovidInfo";
+/*import CovidInfo from "./HomePage/CovidInfo";*/
 import AirQuality from "./HomePage/AirQuality";
 
 import "../css/App.css";
@@ -38,6 +38,8 @@ const WeatherApp = () => {
 
       const dataAirQuality = await fetchAirQuality(lat, lon);
       setAir(dataAirQuality);
+    } else  {
+      console.log("error");
     }
   };
 
@@ -62,9 +64,9 @@ const WeatherApp = () => {
         <div className="container-fluid mt-5">
           <div className="row">
             <div className="col-sm-8">
-              <CurrentWeather weather={weather} />
+              <CurrentWeather weather={forecast} weatherName={weather} />
               <TodayForecast todayForecast={forecast} />
-              <WeatherToday weatherToday={weather} />
+              <WeatherToday weatherToday={forecast} weatherName={weather} />
               <HourlyForecast hourlyForecast={forecast} />
               <DailyForecast dailyForecast={forecast} />
             </div>

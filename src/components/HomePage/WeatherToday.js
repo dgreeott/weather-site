@@ -9,15 +9,15 @@ import { BsArrowsCollapse } from "react-icons/bs";
 const WeatherToday = (props) => {
   return (
     <>
-      {props.weatherToday.main && (
+      {props.weatherToday.daily && props.weatherName.main && (
         <div className="container mt-3">
           <div className="row weatherToday">
             <div className="col-sm ">
               <div className="row ">
                 <h3 className="col-sm weatherToday-name mb-3">
                   <span>
-                    Weather Today in {props.weatherToday.name},{" "}
-                    {props.weatherToday.sys.country}
+                    Weather Today in {props.weatherName.name},{" "}
+                    {props.weatherName.sys.country}
                   </span>
                 </h3>
               </div>
@@ -25,7 +25,7 @@ const WeatherToday = (props) => {
               <div className="row">
                 <div className="col-sm-8">
                   <div className="row weatherToday-temp ml-3">
-                    {Math.round(props.weatherToday.main.feels_like)}&deg;
+                    {Math.round(props.weatherToday.current.feels_like)}&deg;
                   </div>
                   <div className="row ml-2">
                     <h6>Feels Like</h6>
@@ -37,7 +37,8 @@ const WeatherToday = (props) => {
                       <h6>
                         <FiIcons.FiSunrise size={20} />{" "}
                         {moment
-                          .unix(props.weatherToday.sys.sunrise)
+                          .unix(props.weatherToday.current.sunrise)
+                          .tz(props.weatherToday.timezone)
                           .format("LT")}
                       </h6>
                     </div>
@@ -45,7 +46,8 @@ const WeatherToday = (props) => {
                       <h6>
                         <FiIcons.FiSunset size={20} />{" "}
                         {moment
-                          .unix(props.weatherToday.sys.sunset)
+                          .unix(props.weatherToday.current.sunset)
+                          .tz(props.weatherToday.timezone)
                           .format("LT")}
                       </h6>
                     </div>
@@ -63,8 +65,8 @@ const WeatherToday = (props) => {
                     </div>
                     <div className="col-sm-4">
                       <h4>
-                        {Math.round(props.weatherToday.main.temp_max)}&deg;/
-                        {Math.round(props.weatherToday.main.temp_min)}&deg;
+                        {Math.round(props.weatherToday.daily[0].temp.max)}&deg;/
+                        {Math.round(props.weatherToday.daily[0].temp.min)}&deg;
                       </h4>
                     </div>
                   </div>
@@ -76,7 +78,7 @@ const WeatherToday = (props) => {
                       </h4>
                     </div>
                     <div className="col-sm-4">
-                      <h4>{Math.round(props.weatherToday.main.humidity)}%</h4>
+                      <h4>{Math.round(props.weatherToday.current.humidity)}%</h4>
                     </div>
                   </div>
                 </div>
@@ -89,7 +91,7 @@ const WeatherToday = (props) => {
                       </h4>
                     </div>
                     <div className="col-sm-4">
-                      <h4>{Math.round(props.weatherToday.wind.speed)} mph</h4>
+                      <h4>{Math.round(props.weatherToday.current.wind_speed)} mph</h4>
                     </div>
                   </div>
                   <hr></hr>
@@ -101,7 +103,7 @@ const WeatherToday = (props) => {
                     </div>
                     <div className="col-sm-4">
                       <h4>
-                        {(props.weatherToday.main.pressure * 0.03).toFixed(2)}{" "}
+                        {(props.weatherToday.current.pressure * 0.03).toFixed(2)}{" "}
                         in
                       </h4>
                     </div>
