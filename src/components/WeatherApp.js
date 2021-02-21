@@ -38,7 +38,7 @@ const WeatherApp = () => {
 
       const dataAirQuality = await fetchAirQuality(lat, lon);
       setAir(dataAirQuality);
-    } else  {
+    } else {
       console.log("error");
     }
   };
@@ -63,15 +63,12 @@ const WeatherApp = () => {
         </div>
         <div className="container-fluid mt-5">
           <div className="row">
-            <div className="col-sm-8">
+            <div className="col-sm">
               <CurrentWeather weather={forecast} weatherName={weather} />
               <TodayForecast todayForecast={forecast} />
-              <WeatherToday weatherToday={forecast} weatherName={weather} />
+              <WeatherToday weatherToday={forecast} weatherName={weather} airQuality={air} />
               <HourlyForecast hourlyForecast={forecast} />
               <DailyForecast dailyForecast={forecast} />
-            </div>
-            <div className="col-sm-4">
-              <AirQuality airQuality={air} />
             </div>
           </div>
         </div>
