@@ -9,13 +9,16 @@ const HourlyForecast = (props) => {
           <div className="row hourlyForecast">
             <div className="col-sm">
               <div className="row">
-                <div className="col-sm hourlyForecast-name mb-3">
+                <div className="col-sm-3.5 hourlyForecast-name">
                   <h3>Hourly Forecast</h3>
                 </div>
+                <div className="col-sm">
+                  <button className="btn btn-dark">Next 48 Hours</button>
+                </div>
               </div>
-              <div className="row justify-content-center">
-                <div className="col-sm-2">
-                  <div className="row justify-content-center">
+              <div className="row">
+                <div className="col-sm-2 hourlyForecast-card m-3 p-5">
+                  <div className="row justify-content-start">
                     <h2 className="hourlyForecast-day">
                       <span>
                         {moment
@@ -37,11 +40,14 @@ const HourlyForecast = (props) => {
                       }
                     />
                   </div>
+                  <div className="row hourlyForecast-text justify-content-center">
+                    {props.hourlyForecast.hourly[0].weather[0].description}
+                  </div>
                 </div>
-                <div className="col-sm-2">
+                <div className="col-sm-2 hourlyForecast-card m-3 p-5">
                   <div className="row justify-content-center">
                     <h2 className="hourlyForecast-day">
-                    <span>
+                      <span>
                         {moment
                           .unix(props.hourlyForecast.hourly[1].dt)
                           .tz(props.hourlyForecast.timezone)
@@ -61,11 +67,14 @@ const HourlyForecast = (props) => {
                       }
                     />
                   </div>
+                  <div className="row hourlyForecast-text justify-content-center">
+                    {props.hourlyForecast.hourly[1].weather[0].description}
+                  </div>
                 </div>
-                <div className="col-sm-2">
+                <div className="col-sm-2 hourlyForecast-card m-3 p-5">
                   <div className="row justify-content-center">
                     <h2 className="hourlyForecast-day">
-                    <span>
+                      <span>
                         {moment
                           .unix(props.hourlyForecast.hourly[2].dt)
                           .tz(props.hourlyForecast.timezone)
@@ -85,11 +94,14 @@ const HourlyForecast = (props) => {
                       }
                     />
                   </div>
+                  <div className="row hourlyForecast-text justify-content-center">
+                    {props.hourlyForecast.hourly[2].weather[0].description}
+                  </div>
                 </div>
-                <div className="col-sm-2">
+                <div className="col-sm-2 hourlyForecast-card m-3 p-5">
                   <div className="row justify-content-center">
                     <h2 className="hourlyForecast-day">
-                    <span>
+                      <span>
                         {moment
                           .unix(props.hourlyForecast.hourly[3].dt)
                           .tz(props.hourlyForecast.timezone)
@@ -109,11 +121,14 @@ const HourlyForecast = (props) => {
                       }
                     />
                   </div>
+                  <div className="row hourlyForecast-text justify-content-center">
+                    {props.hourlyForecast.hourly[3].weather[0].description}
+                  </div>
                 </div>
-                <div className="col-sm-2">
+                <div className="col-sm-2 hourlyForecast-card m-3 p-5">
                   <div className="row justify-content-center">
                     <h2 className="hourlyForecast-day">
-                    <span>
+                      <span>
                         {moment
                           .unix(props.hourlyForecast.hourly[4].dt)
                           .tz(props.hourlyForecast.timezone)
@@ -133,11 +148,10 @@ const HourlyForecast = (props) => {
                       }
                     />
                   </div>
+                  <div className="row hourlyForecast-text justify-content-center">
+                    {props.hourlyForecast.hourly[4].weather[0].description}
+                  </div>
                 </div>
-              </div>
-
-              <div className="row mt-4">
-                <button className="btn btn-primary">Next 48 Hours</button>
               </div>
             </div>
           </div>

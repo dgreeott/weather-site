@@ -2,10 +2,13 @@ import React from "react";
 import moment from "moment";
 
 const CurrentWeather = (props) => {
+
+  
+
   return (
     <>
       {props.weather.current && props.weatherName.main && (
-        <div className="container mt-3">
+        <div className="container mt-3 p-3">
           <div className="row weather">
             <div className="col-sm">
               <div className="row">

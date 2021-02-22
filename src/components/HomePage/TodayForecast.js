@@ -1,7 +1,5 @@
 import React from "react";
 
-
-
 const TodayForecast = (props) => {
   return (
     <>
@@ -9,12 +7,12 @@ const TodayForecast = (props) => {
         <div className="container mt-3">
           <div className="row todayForecast">
             <div className="col-sm">
-              <div className="row">
+              <div className="row mt-3">
                 <div className="col-sm todayForecast-name mb-3">
                   <h3>Today's Forecast</h3>
                 </div>
               </div>
-              <div className="row todayForecast-temp">
+              <div className="row todayForecast-temp mb-3">
                 <div className="col-sm-3">
                   <div className="row justify-content-center">
                     <h2 className="todayForecast-day">
@@ -55,9 +53,6 @@ const TodayForecast = (props) => {
                     {Math.round(props.todayForecast.daily[2].temp.night)}&deg;
                   </div>
                 </div>
-              </div>
-              <div className="row mt-4">
-                <button className="btn btn-primary">Next Hours</button>
               </div>
             </div>
           </div>
