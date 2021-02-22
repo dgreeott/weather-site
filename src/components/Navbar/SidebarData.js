@@ -23,12 +23,6 @@ export const SidebarData =[
         cName: 'nav-text text-light' 
     },
     {
-        title: 'Air Quality',
-        path: '/air',
-        icon: <RiIcons.RiWindyLine size={30} />,
-        cName: 'nav-text text-light' 
-    },
-    {
         title: 'Covid',
         path: '/covid',
         icon: <RiIcons.RiSurgicalMaskFill size={30} />,

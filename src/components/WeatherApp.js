@@ -43,6 +43,22 @@ const WeatherApp = () => {
     }
   };
 
+  const searchGeoLocation = async (e) => {
+    const dataWeather = await fetchWeather(query);
+
+    setWeather(dataWeather);
+    setQuery("");
+
+    const lat = dataWeather.coord.lat;
+    const lon = dataWeather.coord.lon;
+
+    const dataForecast = await fetchForecast(lat, lon);
+    setForecast(dataForecast);
+
+    const dataAirQuality = await fetchAirQuality(lat, lon);
+    setAir(dataAirQuality);
+  }
+
   return (
     <>
       <div className="main-container mb-5">
@@ -58,16 +74,19 @@ const WeatherApp = () => {
                 onKeyPress={searchWeather}
                 placeholder="Search City..."
               />
+              <button className="m-3" onClick={searchGeoLocation}>Take the Shot!</button>
+
             </div>
           </div>
         </div>
-        <div className="container-fluid mt-5">
+        <div className="container mt-3">
           <div className="row">
             <div className="col-sm">
               <CurrentWeather weather={forecast} weatherName={weather} />
               <TodayForecast todayForecast={forecast} />
-              <WeatherToday weatherToday={forecast} weatherName={weather} airQuality={air} />
               <HourlyForecast hourlyForecast={forecast} />
+              <WeatherToday weatherToday={forecast} weatherName={weather} airQuality={air} />
+              
               <DailyForecast dailyForecast={forecast} />
             </div>
           </div>
