@@ -18,6 +18,8 @@ import AirQuality from "./HomePage/AirQuality";
 import "../css/App.css";
 
 const WeatherApp = () => {
+  const [loadingData, setLoadingData] = useState(true);
+
   const [query, setQuery] = useState("");
   const [weather, setWeather] = useState({});
   const [forecast, setForecast] = useState({});
@@ -38,6 +40,7 @@ const WeatherApp = () => {
 
       const dataAirQuality = await fetchAirQuality(lat, lon);
       setAir(dataAirQuality);
+      setLoadingData(false);
     } else {
       console.log("error");
     }
@@ -92,6 +95,7 @@ const WeatherApp = () => {
           </div>
         </div>
       </div>
+      
     </>
   );
 };

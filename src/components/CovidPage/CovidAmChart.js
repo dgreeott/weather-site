@@ -1,24 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
 
 import * as am4core from "@amcharts/amcharts4/core";
 import * as am4maps from "@amcharts/amcharts4/maps";
 import am4geodata_usaLow from "@amcharts/amcharts4-geodata/usaLow";
 
 import Navbar from "../Navbar/Navbar";
-
-import { fetchCovid } from "../Api/fetchCovid";
+import { CovidStateData } from "./CovidStateData";
 
 const CovidMap = () => {
-  const [value, setValue] = useState({});
-
-  const positiveCovid = async (e) => {
-    if (e.key === "Enter") {
-      const dataPositive = await fetchCovid();
-
-      setValue(dataPositive);
-    }
-  };
-
   let map = am4core.create("chartdiv", am4maps.MapChart);
 
   map.geodata = am4geodata_usaLow;
@@ -39,7 +28,7 @@ const CovidMap = () => {
 
   // Create hover state and set alternative fill color
   let hs = polygonTemplate.states.create("hover");
-  hs.properties.fill = am4core.color("#fff");
+  hs.properties.fill = am4core.color("#232323");
 
   //Excluding Objects
   polygonSeries.exclude = ["CA", "MX", "RU", "BS"];
@@ -47,38 +36,32 @@ const CovidMap = () => {
   // In-line Data
   polygonTemplate.tooltipText = "{name}: {value}";
 
-  polygonSeries.data = [
-    {
-      id: "US-CA",
-      name: "CALIFORNIA",
-      value: 100,
-    },
-    {
-      id: "US-AL",
-      name: "France",
-      value: 500,
-    },
-  ];
+  polygonSeries.data = CovidStateData
 
   polygonSeries.heatRules.push({
     property: "fill",
     target: polygonSeries.mapPolygons.template,
     min: am4core.color("#ffffff"),
     max: am4core.color("#AAAA00"),
-    logarithmic: true,
+    logarithmic: true
   });
 
   return (
-    <div className="main-container mb-5">
+    <>
       <Navbar />
       <div className="container-fluid m-5">
         <div className="row text-center">
-          <div className="col-sm ">
+          <div className="col-sm">
+            <h1>Coronavirus (COVID-19)</h1>
+          </div>
+        </div>
+        <div className="row text-center">
+          <div className="col-sm">
             <div id="chartdiv"></div>
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
