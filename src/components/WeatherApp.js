@@ -12,12 +12,11 @@ import TodayForecast from "./HomePage/TodayForecast";
 import HourlyForecast from "./HomePage/HourlyForecast";
 import WeatherToday from "./HomePage/WeatherToday";
 
-/*import CovidInfo from "./HomePage/CovidInfo";*/
-import AirQuality from "./HomePage/AirQuality";
 
 import "../css/App.css";
 
 const WeatherApp = () => {
+
   const [query, setQuery] = useState("");
   const [weather, setWeather] = useState({});
   const [forecast, setForecast] = useState({});
@@ -74,7 +73,7 @@ const WeatherApp = () => {
                 onKeyPress={searchWeather}
                 placeholder="Search City..."
               />
-              <button className="m-3" onClick={searchGeoLocation}>Take the Shot!</button>
+    
 
             </div>
           </div>
@@ -92,6 +91,7 @@ const WeatherApp = () => {
           </div>
         </div>
       </div>
+      
     </>
   );
 };
