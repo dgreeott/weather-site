@@ -73,7 +73,7 @@ const WeatherApp = () => {
                 onKeyPress={searchWeather}
                 placeholder="Search City..."
               />
-              <button className="m-3" onClick={searchGeoLocation}>Take the Shot!</button>
+    
 
             </div>
           </div>
