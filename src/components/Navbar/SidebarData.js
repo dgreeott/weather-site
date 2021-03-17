@@ -10,6 +10,7 @@ export const SidebarData =[
         icon: <TiIcons.TiWeatherPartlySunny size={30} />,
         cName: 'nav-text text-light' 
     },
+    /*
     {
         title: 'Hourly',
         path: '/hourly',
@@ -22,6 +23,7 @@ export const SidebarData =[
         icon: <IoIcons.IoIosToday size={30} />,
         cName: 'nav-text text-light' 
     },
+    */
     {
         title: 'Covid',
         path: '/covid',
