@@ -1,6 +1,6 @@
 import React from 'react';
 import * as RiIcons from 'react-icons/ri';
-import * as IoIcons from 'react-icons/io';
+/*import * as IoIcons from 'react-icons/io';*/
 import * as TiIcons from 'react-icons/ti';
 
 export const SidebarData =[

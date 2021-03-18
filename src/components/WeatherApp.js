@@ -42,22 +42,6 @@ const WeatherApp = () => {
     }
   };
 
-  const searchGeoLocation = async (e) => {
-    const dataWeather = await fetchWeather(query);
-
-    setWeather(dataWeather);
-    setQuery("");
-
-    const lat = dataWeather.coord.lat;
-    const lon = dataWeather.coord.lon;
-
-    const dataForecast = await fetchForecast(lat, lon);
-    setForecast(dataForecast);
-
-    const dataAirQuality = await fetchAirQuality(lat, lon);
-    setAir(dataAirQuality);
-  }
-
   return (
     <>
       <div className="main-container mb-5">
