@@ -1,6 +1,6 @@
 import React from 'react';
 import * as RiIcons from 'react-icons/ri';
-import * as IoIcons from 'react-icons/io';
+/*import * as IoIcons from 'react-icons/io';*/
 import * as TiIcons from 'react-icons/ti';
 
 export const SidebarData =[
@@ -10,6 +10,7 @@ export const SidebarData =[
         icon: <TiIcons.TiWeatherPartlySunny size={30} />,
         cName: 'nav-text text-light' 
     },
+    /*
     {
         title: 'Hourly',
         path: '/hourly',
@@ -22,6 +23,7 @@ export const SidebarData =[
         icon: <IoIcons.IoIosToday size={30} />,
         cName: 'nav-text text-light' 
     },
+    */
     {
         title: 'Covid',
         path: '/covid',

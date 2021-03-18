@@ -1,9 +1,11 @@
+
 import axios from 'axios';
 
-const URL = 'https://corona.lmao.ninja/v2/states?sort=&yesterday=';
+const URL = 'https://api.covidtracking.com/v1/states/current.json';
 
-export const fetchCovid = async () => {
-    const { data } = await axios.get(URL);
-
-    return data;
+export const fetchCovid = async (state) => {
+    const { dataCovid } = await axios.get(URL)
+    
+    return dataCovid;
 }
+

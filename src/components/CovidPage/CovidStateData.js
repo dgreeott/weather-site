@@ -1,3 +1,18 @@
+import React, { useState } from "react";
+import { fetchCovid } from "../Api/fetchCovid";
+
+
+export const CovidMap = () => {
+  const [state, setstate] = useState({});
+
+  const searchCovid = async (e) => {
+
+    const dataCoivd = await fetchCovid(state);
+
+    setstate(CovidStateData.id)
+
+  }
+}
 
 export const CovidStateData = [
   {

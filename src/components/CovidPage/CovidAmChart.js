@@ -10,11 +10,13 @@ import am4themes_animated from "@amcharts/amcharts4/themes/animated";
 
 import { fetchCovid } from "../Api/fetchCovid";
 
+
 am4core.useTheme(am4themes_animated);
 
 class CovidMap extends Component {
+  
+
   componentDidMount() {
-    console.log(fetchCovid());
     let map = am4core.create("chartdiv", am4maps.MapChart);
 
     map.geodata = am4geodata_usaLow;
@@ -68,6 +70,8 @@ class CovidMap extends Component {
       this.map.dispose();
     }
   }
+
+
   render() {
     return (
       <>
