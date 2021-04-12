@@ -55,7 +55,7 @@ const WeatherApp = () => {
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
                 onKeyPress={searchWeather}
-                placeholder="Search City..."
+                placeholder="Search City + Enter"
               />
     
 
