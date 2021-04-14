@@ -21,6 +21,7 @@
     "react-bootstrap": "^1.4.3",
     "react-dom": "^17.0.1",
     "react-helmet": "^6.1.0",
+    "react-helmet-async": "^1.0.9",
     "react-icon": "^1.0.0",
     "react-icons": "^4.2.0",
     "react-moment": "^1.1.1",

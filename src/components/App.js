@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "../css/App.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Helmet from "react-helmet";
+import {Helmet, HelmetProvider} from "react-helmet-async";
 
 import WeatherApp from "./WeatherApp";
 import CovidMap from "./CovidPage/CovidAmChart";
@@ -9,6 +9,7 @@ import CovidMap from "./CovidPage/CovidAmChart";
 class App extends Component {
   render() {
     return (
+      <HelmetProvider>
       <div className="App">
         <Router>
           <Helmet
@@ -32,6 +33,7 @@ class App extends Component {
           </Switch>
         </Router>
       </div>
+      </HelmetProvider>
     );
   }
 }

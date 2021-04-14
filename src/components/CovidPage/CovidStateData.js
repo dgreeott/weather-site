@@ -1,3 +1,4 @@
+/*
 import React, { useState } from "react";
 import { fetchCovid } from "../Api/fetchCovid";
 
@@ -13,6 +14,7 @@ export const CovidMap = () => {
 
   }
 }
+*/
 
 export const CovidStateData = [
   {
