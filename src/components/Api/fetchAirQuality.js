@@ -11,7 +11,10 @@ export const fetchAirQuality = async (lat, lon) => {
             units: 'imperial',
             APPID: API_KEY_FORECAST,
         }
-    });
+    })
+    .catch(function (error) {
+        console.clear();
+      });
 
     return data;
 }
