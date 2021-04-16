@@ -6,6 +6,7 @@ import { fetchWeather } from "./Api/fetchWeather";
 import { fetchForecast } from "./Api/fetchForecast";
 import { fetchAirQuality } from "./Api/fetchAirQuality";
 
+import WeatherMap from "./Mapbox/Map"
 import DailyForecast from "./HomePage/DailyForecast";
 import CurrentWeather from "./HomePage/CurrentWeather";
 import TodayForecast from "./HomePage/TodayForecast";
@@ -102,6 +103,7 @@ const WeatherApp = () => {
                     airQuality={air}
                   />
                   <DailyForecast dailyForecast={forecast} />
+                  
                 </div>
               </div>
             </div>

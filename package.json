@@ -24,6 +24,7 @@
     "react-helmet-async": "^1.0.9",
     "react-icon": "^1.0.0",
     "react-icons": "^4.2.0",
+    "react-map-gl": "^6.1.12",
     "react-moment": "^1.1.1",
     "react-router": "^5.2.0",
     "react-router-dom": "^5.2.0",
