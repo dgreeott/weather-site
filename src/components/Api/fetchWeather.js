@@ -12,7 +12,8 @@ export const fetchWeather = async (query) => {
           APPID: API_KEY,
         },
       })
-      .catch(function (error) {
+      .catch((error) => {
+        console.log(error)
         console.clear()
       });
 
